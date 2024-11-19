@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Calculator (Cramer's Rule)</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <!-- Dark mode toggle button -->
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+    <div class="container">
+        <h1>Matrix Calculator<br>(Cramer's Rule)</h1>
+        <!-- Matrix size selection dropdown -->
+        <div class="matrix-size">
+            <select id="matrix-size" onchange="updateMatrixInputs()">
+                <option selected value="0">Select Matrix</option>
+                <option value="2">2x2 Matrix</option>
+                <option value="3">3x3 Matrix</option>
+                <option value="4">4x4 Matrix</option>
+            </select>
+        </div>
+        <!-- Container for matrix input fields -->
+        <div id="matrix-inputs" class="matrix-inputs"></div>
+        <div class="matrix-actions">
+            <!-- Button group for main actions -->
+            <div class="button-group">
+                <button onclick="getDeterminants()">Get Determinants</button>
+                <button onclick="solve()">Solve</button>
+                <button onclick="generateRandomInputs()">Random Inputs</button>
+            </div>
+            <!-- Matrix save and load functionality -->
+            <button onclick="saveMatrix()">Save Matrix</button>
+            <div class="matrix-name">
+            <input type="text" id="load-matrix-name" placeholder="Enter matrix name to load">
+            </div>
+            <button onclick="loadMatrix()">Load Matrix</button>
+        </div>
+        <!-- Container for displaying messages -->
+        <div id="message" class="message" style="display: none;"></div>
+        <!-- Containers for displaying results -->
+        <div id="determinants"></div>
+        <div id="result"></div>
+        <div id="step-by-step"></div>
+        <button class="show-developers-btn" onclick="toggleDevelopersSection()">Show Developers</button>
+        <!-- Container for developers -->
+        
+        <div class="developers-section" id="developers-section">
+            <div class="developer-card">
+                <div class="developer-card-front">
+                    <img src="developers/eric.jpg" alt="Developer 1" class="developer-image">
+                    <h3>Eric John B. Cerilla Jr.</h3>
+                    <p>Developer</p>
+                </div>
+                <div class="developer-card-back">
+                    <h3>Eric John B. Cerilla Jr.</h3>
+                    <p>pogi lang</p>
+                </div>
+            </div>
+            <div class="developer-card">
+                <div class="developer-card-front">
+                    <img src="developers/zackk.jpg" alt="Developer 2" class="developer-image">
+                    <h3>Ysaac F. Declines</h3>
+                    <p>Lead Developer</p>
+                </div>
+                <div class="developer-card-back">
+                    <h3>Ysaac F. Declines</h3>
+                    <p>pogi lang</p>
+                </div>
+            </div>
+            <div class="developer-card">
+                <div class="developer-card-front">
+                    <img src="developers/yhesha.jpg" alt="Developer 3" class="developer-image">
+                    <h3>Yhesha L. Dela Cruz</h3>
+                    <p>Developer</p>
+                </div>
+                <div class="developer-card-back">
+                    <h3>Yhesha L. Dela Cruz</h3>
+                    <p>ganda lang</p>
+                </div>
+            </div>
+            <div class="developer-card">
+                <div class="developer-card-front">
+                    <img src="developers/albert.jpg" alt="Developer 4" class="developer-image">
+                    <h3>Albert A. Francisco</h3>
+                    <p>Developer</p>
+                </div>
+                <div class="developer-card-back">
+                    <h3>Albert A. Francisco</h3>
+                    <p>pogi lang</p>
+                </div>
+            </div>
+            <div class="developer-card">
+                <div class="developer-card-front">
+                    <img src="developers/ivy.jpg" alt="Developer 5" class="developer-image">
+                    <h3>Leoness Ivy B. Servillion</h3>
+                    <p>Developer</p>
+                </div>
+                <div class="developer-card-back">
+                    <h3>Leoness Ivy B. Servillion</h3>
+                    <p>ganda lang</p>
+                </div>
+            </div>
+            <div class="developer-card">
+                <div class="developer-card-front">
+                    <img src="developers/brian.jpg" alt="Developer 6" class="developer-image">
+                    <h3>Brian Josh M. Toledo</h3>
+                    <p>Developer</p>
+                </div>
+                <div class="developer-card-back">
+                    <h3>Brian Josh M. Toledo</h3>
+                    <p>pogi lang</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

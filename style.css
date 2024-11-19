@@ -1,0 +1,288 @@
+
+/* Define color variables for light mode */
+        :root {
+            --bg-color: #f0f4f8;
+            --text-color: #2d3748;
+            --input-bg: #ffffff;
+            --input-border: #cbd5e0;
+            --button-bg: #4299e1;
+            --button-text: #ffffff;
+            --card-bg: #ffffff;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --error-color: #e53e3e;
+            --success-color: #38a169;
+        }
+
+        /* Define color variables for dark mode */
+        .dark-mode {
+            --bg-color: #1a202c;
+            --text-color: #e2e8f0;
+            --input-bg: #2d3748;
+            --input-border: #4a5568;
+            --button-bg: #4299e1;
+            --button-text: #ffffff;
+            --card-bg: #2d3748;
+            --card-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+            --error-color: #fc8181;
+            --success-color: #68d391;
+        }
+
+        /* Set up the body styles and background pattern */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+            background-image: 
+                linear-gradient(30deg, var(--card-bg) 12%, transparent 12.5%, transparent 87%, var(--card-bg) 87.5%, var(--card-bg)),
+                linear-gradient(150deg, var(--card-bg) 12%, transparent 12.5%, transparent 87%, var(--card-bg) 87.5%, var(--card-bg)),
+                linear-gradient(30deg, var(--card-bg) 12%, transparent 12.5%, transparent 87%, var(--card-bg) 87.5%, var(--card-bg)),
+                linear-gradient(150deg, var(--card-bg) 12%, transparent 12.5%, transparent 87%, var(--card-bg) 87.5%, var(--card-bg)),
+                linear-gradient(60deg, var(--input-border) 25%, transparent 25.5%, transparent 75%, var(--input-border) 75%, var(--input-border)),
+                linear-gradient(60deg, var(--input-border) 25%, transparent 25.5%, transparent 75%, var(--input-border) 75%, var(--input-border));
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+        }
+
+        /* Style the main container */
+        .container {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            padding: 30px;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        /* Style headings */
+        h1, h2, h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        option {
+            text-align: center;
+        }
+
+        /* Add margin to matrix size and action sections */
+        .matrix-size, .matrix-actions {
+            margin-bottom: 20px;
+        }
+
+        /* Style select and text input elements */
+        select, input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--input-border);
+            border-radius: 6px;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            margin-bottom: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        /* Style focus state for select and text input elements */
+        select:focus, input[type="text"]:focus {
+            outline: none;
+            border-color: var(--button-bg);
+        }
+
+        /* Style the matrix input container */
+        .matrix-inputs {
+            display: grid;
+            gap: 15px;
+            margin-right: 30px;
+            margin-bottom: 20px;
+            
+        
+        }
+
+        /* Style each row of the matrix */
+        .matrix-row {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+    
+        }
+
+        /* Style number input elements */
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--input-border);
+            border-radius: 6px;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+
+        /* Style focus state for number input elements */
+        input[type="number"]:focus {
+            outline: none;
+            border-color: var(--button-bg);
+        }
+
+        .matrix-name{
+            display: flex;
+        }
+
+        /* Style buttons */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s;
+        }
+
+        /* Style button hover state */
+        button:hover {
+            opacity: 0.9;
+        }
+
+        /* Style the button group container */
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        /* Style result, step-by-step, and determinants sections */
+        #result, #step-by-step, #determinants {
+            margin-top: 20px;
+            background-color: var(--input-bg);
+            border-radius: 6px;
+            padding: 15px;
+        }
+
+        /* Style message elements */
+        .message {
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* Style error messages */
+        .error {
+            background-color: var(--error-color);
+            color: #ffffff;
+        }
+
+        /* Style success messages */
+        .success {
+            background-color: var(--success-color);
+            color: #ffffff;
+        }
+
+        /* Style the dark mode toggle button */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            width: 10%;
+            border-radius: 100%;
+            padding: 0%;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        /* Style each step in the step-by-step solution */
+        .step {
+            margin-bottom: 15px;
+            border-left: 3px solid var(--button-bg);
+            padding-left: 15px;
+        }
+
+        .matrix-labels {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .matrix-label {
+            text-align: center;
+        }
+
+        .developers-section {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            perspective: 1000px;
+            display: none;
+        }
+
+        .developer-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            height: 300px;
+            position: relative;
+        }
+        .developer-card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .developer-card-front, .developer-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .developer-card-back {
+            transform: rotateY(180deg);
+        }
+
+        .developer-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        .show-developers-btn {
+            margin-top: 20px;
+        }
+
+        /* Media query for responsive design on smaller screens */
+        @media (max-width: 600px) {
+            .matrix-row {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .button-group {
+                flex-direction: column;
+            }
+        }
